@@ -58,7 +58,7 @@ The files contain information on the resources as follows (note: not all invento
 | vpc_peers | Details of VPC Peering Connections |
 | vpcs | Details of Virtual Private Clouds |
 
-Example ssh config files can be found for [environment-1](files/config.d/environment-1) in the `files/config.d` folder.  
+Example ssh config files can be found for [ocp-test-01](files/config.d/ocp-test-01) in the `files/config.d` folder.  
 The relevant file will need to be copied to the Ansible Control Node and the domain names changed to match that being used when deploying the AWS environment.
 
 
