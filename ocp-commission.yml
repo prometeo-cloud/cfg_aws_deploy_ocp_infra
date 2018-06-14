@@ -1,0 +1,13 @@
+---
+- name: Commissioning OCP
+  hosts: box
+  roles:
+#    - aws_install_prerequisites
+    - aws_manage_config
+
+    - aws_manage_target_groups
+    - aws_manage_elbs
+
+#    - aws_manage_subnets
+    - aws_manage_ec2_instances
+...

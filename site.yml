@@ -1,0 +1,16 @@
+---
+- name: Deploy AWS Environment
+  hosts: box
+  roles:
+    - aws_install_prerequisites
+    - aws_manage_config
+    - aws_manage_vpc
+    - aws_manage_vpc_peer
+    - aws_manage_subnets
+    - aws_manage_igws
+    - aws_manage_natgws
+    - aws_manage_route_tables
+    - aws_manage_security_groups
+    - aws_manage_ec2_instances
+    - { role: aws_manage_config, arg_action: "delete" }
+...

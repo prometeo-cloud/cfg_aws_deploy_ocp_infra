@@ -1,0 +1,1 @@
+This folder contains variables for the AWS cloud platform.

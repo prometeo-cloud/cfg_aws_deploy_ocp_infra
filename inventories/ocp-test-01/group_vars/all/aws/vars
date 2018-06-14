@@ -1,0 +1,4 @@
+---
+ec2_user: "ec2-user"
+jumpbox_user: "ocp-test-01-user"
+...

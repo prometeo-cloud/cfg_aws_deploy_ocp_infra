@@ -1,0 +1,14 @@
+---
+subnet_names:
+  ctrl:
+    public_a: "OCP-TEST-01-CTRL-Public-A"
+    public_b: "OCP-TEST-01-CTRL-Public-B"
+    public_c: "OCP-TEST-01-CTRL-Public-C"
+  iaas:
+    public_a: "OCP-TEST-01-Public-A"
+    public_b: "OCP-TEST-01-Public-B"
+    public_c: "OCP-TEST-01-Public-C"
+    private_a: "OCP-TEST-01-Private-A"
+    private_b: "OCP-TEST-01-Private-B"
+    private_c: "OCP-TEST-01-Private-C"
+...

@@ -1,0 +1,45 @@
+---
+domain_name: "example.com"
+
+# Common variables
+regions:
+  eu:
+    ireland: "eu-west-1"
+    london: "eu-west-2"
+    paris: "eu-west-3"
+    frankfurt: "eu-central-1"
+  us:
+    ohio: "us-east-2"
+    n_virginia: "us-east-1"
+    n_california: "us-west-1"
+    oregon: "us-west-2"
+  ap:   # Asia Pacific
+    mumbai: "ap-south-1"
+    singapore: "ap-southeast-1"
+    sydney: "ap-southeast-2"
+
+#aws_region:
+aws_region: "{{ regions.eu.london }}"
+
+# AWS AMIs - replace the AMI names below with the actual ones
+amis:
+  ireland: "ami-xxxxx"
+  london: "ami-xxxxx"
+  ohio: "ami-xxxxx"
+  singapore: "ami-xxxxx"
+
+# Set the RHEL image for the region
+rhel_image: "{{ amis.london }}"
+
+# SSL certificates for ELBS
+master_cert: ""
+apps_router_cert: ""
+
+# Use for Ansible Control Node - AWS keys held in encrypted vault file (see vault.example)
+aws_access_key: "{{ vault_access_key }}"
+aws_secret_key: "{{ vault_secret_key }}"
+
+# Use for Ansible Tower - AWS credentials passed as environment variables
+#aws_access_key: "{{ lookup('env', 'AWS_ACCESS_KEY') }}"
+#aws_secret_key: "{{ lookup('env', 'AWS_SECRET_KEY') }}"
+...

@@ -1,0 +1,55 @@
+---
+aws_sec_grps:
+  - aws_sec_grp_name: "{{ (project_name | lower) | replace(' ', '-') }}-web-sg"
+    aws_sec_grp_desc: "{{ project_name }} Web Security Group"
+    aws_sec_grp_region: "{{ project_region }}"
+    aws_sec_grp_vpc: "{{ project_vpc }}"
+    aws_sec_grp_rules:
+      - proto: tcp
+        from_port: 22
+        to_port: 22
+        group_name: "iaas-projects-dmz-sg"
+    aws_sec_grp_egress:
+      - proto: all
+        cidr_ip: 0.0.0.0/0
+
+  - aws_sec_grp_name: "{{ (project_name | lower) | replace(' ', '-') }}-app-sg"
+    aws_sec_grp_desc: "{{ project_name }} Application Security Group"
+    aws_sec_grp_region: "{{ project_region }}"
+    aws_sec_grp_vpc: "{{ project_vpc }}"
+    aws_sec_grp_rules:
+      - proto: tcp
+        ports:
+          - 4118
+          - 4119
+          - 4120
+          - 4121
+          - 4122
+        group_name: "{{ (project_name | lower) | replace(' ', '-') }}-web-sg"
+      - proto: tcp
+        from_port: 22
+        to_port: 22
+        group_name: "iaas-projects-dmz-sg"
+    aws_sec_grp_egress:
+      - proto: all
+        cidr_ip: 0.0.0.0/0
+
+  - aws_sec_grp_name: "{{ (project_name | lower) | replace(' ', '-') }}-db-sg"
+    aws_sec_grp_desc: "{{ project_name }} Database Security Group"
+    aws_sec_grp_region: "{{ project_region }}"
+    aws_sec_grp_vpc: "{{ project_vpc }}"
+    aws_sec_grp_rules:
+      - proto: tcp
+        ports:
+          - 1433
+          - 1521
+          - 3306
+        group_name: "{{ (project_name | lower) | replace(' ', '-') }}-app-sg"
+      - proto: tcp
+        from_port: 22
+        to_port: 22
+        group_name: "iaas-projects-dmz-sg"
+    aws_sec_grp_egress:
+      - proto: all
+        cidr_ip: 0.0.0.0/0
+...

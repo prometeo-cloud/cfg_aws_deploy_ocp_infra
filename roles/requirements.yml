@@ -1,0 +1,37 @@
+---
+- name: aws_install_prerequisites
+  src: https://github.com/prometeo-cloud/aws_install_prerequisites
+
+- name: aws_manage_config
+  src: https://github.com/prometeo-cloud/aws_manage_config
+
+- name: aws_manage_vpc
+  src: https://github.com/prometeo-cloud/aws_manage_vpc
+
+- name: aws_manage_vpc_peer
+  src: https://github.com/prometeo-cloud/aws_manage_vpc_peer
+
+- name: aws_manage_subnets
+  src: https://github.com/prometeo-cloud/aws_manage_subnets
+
+- name: aws_manage_igws
+  src: https://github.com/prometeo-cloud/aws_manage_igws
+
+- name: aws_manage_natgws
+  src: https://github.com/prometeo-cloud/aws_manage_natgws
+
+- name: aws_manage_route_tables
+  src: https://github.com/prometeo-cloud/aws_manage_route_tables
+
+- name: aws_manage_security_groups
+  src: https://github.com/prometeo-cloud/aws_manage_security_groups
+
+- name: aws_manage_target_groups
+  src: https://github.com/prometeo-cloud/aws_manage_target_groups
+
+- name: aws_manage_elbs
+  src: https://github.com/prometeo-cloud/aws_manage_elbs
+
+- name: aws_manage_ec2_instances
+  src: https://github.com/prometeo-cloud/aws_manage_ec2_instances
+...

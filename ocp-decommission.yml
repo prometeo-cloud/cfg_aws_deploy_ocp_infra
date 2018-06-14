@@ -1,0 +1,12 @@
+---
+- name: Decommissioning OCP
+  hosts: box
+  roles:
+#    - aws_install_prerequisites
+    - aws_manage_config
+
+    - { role: aws_manage_ec2_instances, arg_action: "delete" }
+#    - { role: aws_manage_elbs, arg_action: "delete" }
+#    - { role: aws_manage_target_groups, arg_action: "delete" }
+#    - { role: aws_manage_subnets, arg_action: "delete" }
+...

@@ -1,0 +1,9 @@
+---
+project_name: "ocp-test-01"
+project_owner: "prometeo"
+project_department: "DevOps"
+
+project_vpc: "ocp-test-01"
+project_region: "{{ aws_region }}"
+project_key_pair: "{{ project_name }}_keypair"
+...

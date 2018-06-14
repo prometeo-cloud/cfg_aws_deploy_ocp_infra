@@ -1,0 +1,39 @@
+---
+images:
+  base:
+    ami: "{{ rhel_image }}"
+    type: t2.micro
+  bastion:
+    ami: "{{ rhel_image }}"
+    type: t2.micro
+  compute:
+    ami: "{{ rhel_image }}"
+    type: t2.micro
+  infra:
+    ami: "{{ rhel_image }}"
+    type: t2.micro
+  master:
+    ami: "{{ rhel_image }}"
+    type: t2.micro
+  tower:
+    ami: "{{ rhel_image }}"
+    type: m4.large
+
+ec2_instances:
+  - name: "{{ (project_name | upper) | replace(' ','_') }}_JUMPBOX"
+    assign_public_ip: "yes"
+    dns_name: "{{ project_name | lower }}-jumpbox.{{ domain_name }}"
+    groups: "iaas-projects-dmz-sg"
+    image: "{{ images.bastion.ami }}"
+    instance_profile_name: "PROMETEO_EC2"
+    jumpbox: "yes"
+    key_pair_name: "{{ project_key_pair }}"
+    monitoring: "no"
+    region: "{{ project_region }}"
+    set_hostname: True
+    termination_protection: "no"
+    type: "{{ images.bastion.type }}"
+    subnet_tag: "{{ subnet_names.iaas.public_a }}"
+    user_data: "jumpbox.sh"
+    zone: "{{ project_region }}a"
+...

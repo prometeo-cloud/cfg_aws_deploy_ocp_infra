@@ -1,0 +1,8 @@
+---
+resource_tags:
+  Name: "{{ resource_name | default('') }}"
+  Owner: "{{ project_owner }}"
+  Project: "{{ project_name }}"
+  Department: "{{ project_department }}"
+  Implementation Date: "{{ ansible_date_time.date }}"
+...

@@ -1,0 +1,14 @@
+# User is as specified in "jumpbox_user" variable in group_vars/all/aws/vars
+Host OCP_TEST_01_Jump_Box
+  ForwardAgent yes
+  User ocp-test-01-user
+  IdentityFile ~/.ssh/ocp_test_01_admins.pem
+  StrictHostKeyChecking no
+  ControlPath ~/.ssh/ansible-%r@%h:%p
+
+# environment private subnets
+# replace host IPs below with the actual IPs & example.com domain with actual domain
+Host x.x.x.* x.x.x.* x.x.x.* x.x.x.*
+  User ec2-user
+  ProxyCommand ssh -W %h:%p ocp_test_01.example.com
+  IdentityFile ~/.ssh/Ansible_build.pem

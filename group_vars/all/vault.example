@@ -1,0 +1,10 @@
+# Copy this file and rename vault
+# Set AWS keys in variables below
+# Encrypt using:  ansible-vault encrypt group_vars/all/vault
+---
+organisation: "1234567"
+activation_key: "MY-RH-KEY"
+
+vault_access_key: "AKIAIOSFODNN7EXAMPLE"
+vault_secret_key: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+...

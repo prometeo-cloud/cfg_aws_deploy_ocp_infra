@@ -1,0 +1,8 @@
+*.iml
+.idea
+.vagrant
+roles/*
+!roles/requirements.yml
+*.retry
+vault
+!vault.example
